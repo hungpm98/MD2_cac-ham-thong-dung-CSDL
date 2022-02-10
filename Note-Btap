@@ -1,0 +1,42 @@
+
+1 Tìm các sản phẩm có chứa tên ‘Ford’.
+select * from products
+where productName
+like '%Ford%'
+
+2 Liệt kê các sản phẩm kết thúc bằng 'ship'.
+select * from products
+where productName
+like '%ship'
+
+3 Báo cáo số lượng khách hàng ở Đan Mạch, Na Uy và Thụy Điển.
+select country,count(*) from customers
+where country in ('Norway','Denmark','Sweden')
+group by country;
+
+4 Những sản phẩm có mã sản phẩm trong khoảng S700_1000 đến S700_1499 là gì
+select * from products where productCode between 'S700_1000' and 'S700_1499';
+
+5 Những khách hàng nào có một chữ số trong tên của họ?
+select * from customers where customerName regexp '[0-9]';
+
+6 Liệt kê tên của những nhân viên được gọi là Larry hoặc Barry.
+select * from employees
+where firstName = 'Larry' or firstName='Barry' or lastName = 'Larry' or lastName='Barry';
+
+7 Lấy ra quốc gia có số lượng customer đông nhất
+select max(country),count(country)
+from customers
+group by country
+order by count(country) desc
+limit 1;
+
+8 Lấy ra customer có tổng tiền mua hàng lớn nhất
+
+
+9 Liệt kê tất cả các bản ghi trong bảng Thanh toán. Chỉ hiển thị 10 hàng kết quả đầu tiên.
+10 Hiển thị tất cả các giá trị cho Ngày thanh toán trong bảng Thanh toán. Sắp xếp kết quả theo ngày thanh toán theo thứ tự giảm dần.
+11 Liệt kê tất cả các khoản thanh toán lớn hơn hai lần số tiền trung bình?
+12 Người mẫu cổ điển bán được bao nhiêu sản phẩm khác biệt?
+13 Liệt kê tất cả các sản phẩm đã mua của Quà tặng Herkku.
+14 Liệt kê tên của nhân viên với các ký tự không phải chữ cái trong tên của họ.
